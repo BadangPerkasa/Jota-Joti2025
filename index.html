@@ -69,9 +69,47 @@
       color: #94a3b8;
     }
     footer a { color: #94a3b8; text-decoration: none; }
+
+    /* Banner SVG */
+    .jota-joti-banner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+    .jota-joti-banner svg {
+      max-width: 320px;
+      height: auto;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Banner ilustrasi absurd JOTA JOTI -->
+  <div class="jota-joti-banner">
+    <svg viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+      <!-- Lingkaran bumi -->
+      <circle cx="150" cy="60" r="40" fill="#2563eb" opacity="0.8"/>
+      <!-- Garis orbit absurd -->
+      <ellipse cx="150" cy="60" rx="70" ry="30" fill="none" stroke="#facc15" stroke-dasharray="6 6"/>
+      <ellipse cx="150" cy="60" rx="90" ry="50" fill="none" stroke="#22d3ee" stroke-dasharray="4 8"/>
+      <!-- Antena radio -->
+      <rect x="145" y="10" width="10" height="30" rx="2" fill="#facc15"/>
+      <polygon points="140,10 160,10 150,0" fill="#facc15"/>
+      <!-- Gelombang radio animasi -->
+      <path d="M150 0 Q180 30 150 60" stroke="#22d3ee" stroke-width="2" fill="none">
+        <animate attributeName="d" dur="2s" repeatCount="indefinite"
+          values="M150 0 Q180 30 150 60;
+                  M150 0 Q120 30 150 60;
+                  M150 0 Q180 30 150 60" />
+      </path>
+      <!-- Tulisan JOTA JOTI -->
+      <text x="150" y="115" text-anchor="middle" font-size="18" font-weight="bold" fill="#facc15">
+        JOTA JOTI 2025
+      </text>
+    </svg>
+  </div>
+
   <h1> Pangkalan Terfavorit </h1>
 
   <div class="grid" id="leaderboard-grid"></div>
@@ -83,26 +121,26 @@
   <!-- JSON data embed -->
   <script id="leaderboard-data" type="application/json">
   [
-    {"id":"1","name":"SMA Negeri 1","score":95},
-    {"id":"2","name":"SMA Negeri 2","score":88},
-    {"id":"3","name":"SMA Negeri 3","score":92},
-    {"id":"4","name":"SMA Negeri 4","score":80},
-    {"id":"5","name":"SMA Negeri 5","score":77},
-    {"id":"6","name":"SMA Negeri 6","score":85},
-    {"id":"7","name":"SMA Negeri 7","score":110},
-    {"id":"8","name":"SMA Negeri 8","score":90},
-    {"id":"9","name":"SMA Negeri 9","score":65},
-    {"id":"10","name":"SMA Negeri 10","score":82},
-    {"id":"11","name":"SMA Negeri 11","score":76},
-    {"id":"12","name":"SMA Negeri 12","score":68},
-    {"id":"13","name":"SMA Negeri 13","score":91},
-    {"id":"14","name":"SMA Negeri 14","score":87},
-    {"id":"15","name":"SMA Negeri 15","score":73},
-    {"id":"16","name":"SMA Negeri 16","score":79},
-    {"id":"17","name":"SMA Negeri 17","score":66},
-    {"id":"18","name":"SMA Negeri 18","score":83},
-    {"id":"19","name":"SMA Negeri 19","score":72},
-    {"id":"20","name":"SMA Negeri 20","score":60}
+    {"id":"1","name":"SMP Negeri 1","score":0},
+    {"id":"2","name":"SMP Negeri 2","score":0},
+    {"id":"3","name":"SMP Negeri 3","score":0},
+    {"id":"4","name":"SMP Negeri 4","score":0},
+    {"id":"5","name":"SMP Negeri 5","score":0},
+    {"id":"6","name":"SMP Negeri 6","score":0},
+    {"id":"7","name":"SMP Negeri 7","score":0},
+    {"id":"8","name":"SMP Negeri 8","score":0},
+    {"id":"9","name":"SMP Negeri 9","score":0},
+    {"id":"10","name":"SMP Negeri 10","score":0},
+    {"id":"11","name":"SMP Negeri 11","score":0},
+    {"id":"12","name":"SMP Negeri 12","score":0},
+    {"id":"13","name":"SMP Negeri 13","score":0},
+    {"id":"14","name":"SMP Negeri 14","score":0},
+    {"id":"15","name":"SMP Negeri 15","score":0},
+    {"id":"16","name":"SMP Negeri 16","score":0},
+    {"id":"17","name":"SMP Negeri 17","score":0},
+    {"id":"18","name":"SMP Negeri 18","score":0},
+    {"id":"19","name":"SMP Negeri 19","score":0},
+    {"id":"20","name":"SMP Negeri 20","score":0}
   ]
   </script>
 
