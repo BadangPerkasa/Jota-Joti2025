@@ -12,6 +12,29 @@
       margin: 0;
       padding: 0;
     }
+    /* Banner logo animasi */
+    .logo-banner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+    .logo-banner img {
+      width: 100%;
+      max-width: 450px; /* batas maksimal biar nggak terlalu besar */
+      height: auto;
+      object-fit: contain;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        transform: translateY(-15px) scale(1.05);
+      }
+    }
+
     h1 {
       text-align: center;
       padding: 1.5rem;
@@ -69,48 +92,16 @@
       color: #94a3b8;
     }
     footer a { color: #94a3b8; text-decoration: none; }
-
-    /* Banner SVG */
-    .jota-joti-banner {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
-    }
-    .jota-joti-banner svg {
-      max-width: 320px;
-      height: auto;
-    }
   </style>
 </head>
 <body>
 
-  <!-- Banner ilustrasi absurd JOTA JOTI -->
-  <div class="jota-joti-banner">
-    <svg viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
-      <!-- Lingkaran bumi -->
-      <circle cx="150" cy="60" r="40" fill="#2563eb" opacity="0.8"/>
-      <!-- Garis orbit absurd -->
-      <ellipse cx="150" cy="60" rx="70" ry="30" fill="none" stroke="#facc15" stroke-dasharray="6 6"/>
-      <ellipse cx="150" cy="60" rx="90" ry="50" fill="none" stroke="#22d3ee" stroke-dasharray="4 8"/>
-      <!-- Antena radio -->
-      <rect x="145" y="10" width="10" height="30" rx="2" fill="#facc15"/>
-      <polygon points="140,10 160,10 150,0" fill="#facc15"/>
-      <!-- Gelombang radio animasi -->
-      <path d="M150 0 Q180 30 150 60" stroke="#22d3ee" stroke-width="2" fill="none">
-        <animate attributeName="d" dur="2s" repeatCount="indefinite"
-          values="M150 0 Q180 30 150 60;
-                  M150 0 Q120 30 150 60;
-                  M150 0 Q180 30 150 60" />
-      </path>
-      <!-- Tulisan JOTA JOTI -->
-      <text x="150" y="115" text-anchor="middle" font-size="18" font-weight="bold" fill="#facc15">
-        JOTA JOTI 2025
-      </text>
-    </svg>
+  <!-- Banner Logo -->
+  <div class="logo-banner">
+    <img src="LOGO HEADLINE.png" alt="Logo Headline">
   </div>
 
-  <h1> Pangkalan Terfavorit </h1>
+  <h1>PANGKALAN TERBAIK</h1>
 
   <div class="grid" id="leaderboard-grid"></div>
 
