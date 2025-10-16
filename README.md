@@ -37,8 +37,6 @@ Menggunakan `Background JOTA-JOTI 2025.png` yang menjadi identitas utama halaman
 Tata letak menggunakan grid fleksibel, tampak rapi di layar besar maupun ponsel.
 
 🔗 **Footer Interaktif**  
-Tautan dukungan “Supported by [Kodeka](https://instagram.com/kodeka)” menuju Instagram partner pendukung.
+Tautan dukungan “Supported by [Kodeka](https://instagram.com/kodeka2025)” menuju Instagram partner pendukung.
 
 ---
-
-## 📁 Struktur Folder
