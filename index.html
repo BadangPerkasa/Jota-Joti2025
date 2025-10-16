@@ -5,138 +5,184 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Pangkalan Terbaik</title>
   <style>
-    body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url("Background JOTA-JOTI 2025.png") no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    margin: 0; 
-    padding: 0;
+    :root {
+      --retro-orange: #cdcf50;
+      --retro-purple: #6a0dad;
+      --retro-white: #fff8f0;
+      --retro-shadow: rgba(0, 0, 0, 0.25);
     }
-    /* Banner logo animasi */
+  
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url("Background JOTA-JOTI 2025.png") no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: var(--retro-white);
+      position: relative;
+      overflow-x: hidden;
+    }
+  
+    /* ==== Banner Logo Atas ==== */
     .logo-banner {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 1rem;
+      padding: 1.5rem;
+      animation: fadeInDown 1.2s ease;
     }
+  
     .logo-banner img {
       width: 100%;
-      max-width: 250px; /* batas maksimal biar nggak terlalu besar */
+      max-width: 250px;
       height: auto;
       object-fit: contain;
       animation: float 3s ease-in-out infinite;
+      filter: drop-shadow(0 8px 16px var(--retro-shadow));
     }
-    @keyframes float {
-    0%, 100% {
-      transform: translateY(0) scale(1);
-      } 
-    50% {
-      transform: translateY(-5px) scale(1.1); /* lebih halus, tidak besar */
-      }
-  }
-
+  
+    /* ==== Logo Headline Bawah (diperbesar) ==== */
+    .logo-banner.bottom {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .logo-banner.bottom img {
+      animation: none !important;
+      max-width: 400px; /* sebelumnya 250px, sekarang 400px agar lebih besar */
+      filter: drop-shadow(0 8px 20px var(--retro-shadow));
+    }
+  
     h1 {
       text-align: center;
-      padding: 1.5rem;
+      margin-top: 1rem;
       font-size: 1.8rem;
-      color: #facc15;
-      text-shadow: 0 0 5px rgba(250,204,21,.5);
+      font-weight: 800;
+      color: var(--retro-orange);
+      text-shadow: 0 0 10px rgba(255, 180, 0, 0.7);
     }
+  
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1rem;
       padding: 1rem;
       max-width: 1200px;
-      margin: auto;
+      margin: 2rem auto;
     }
+  
     .card {
-      background: #212b3b;
+      background: rgba(255,255,255,0.95);
+      color: #333;
       border-radius: 12px;
       padding: 1rem;
       display: flex;
       align-items: center;
       gap: 1rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
+  
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
     }
+  
     .rank {
-      min-width: 40px;
-      height: 40px;
+      min-width: 50px;
+      height: 50px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
-      font-size: 1.2rem;
-      background: #617085; /* abu default */
+      font-size: 1.3rem;
+      background: var(--retro-purple);
+      color: #fff;
+      box-shadow: 0 3px 6px var(--retro-shadow);
     }
-    .info {
-      flex-grow: 1;
-    }
+  
+    .info { flex-grow: 1; }
+  
     .name {
       font-size: 1.1rem;
-      font-weight: 600;
+      font-weight: 700;
+      color: var(--retro-purple);
     }
+  
     .score {
       font-size: 0.9rem;
-      color: #cbd5e1;
+      color: #555;
     }
+  
     footer {
       text-align: center;
       padding: 1rem;
-      font-size: 0.8rem;
-      color: #94a3b8;
+      font-size: 0.9rem;
+      color: var(--retro-white);
+      position: relative;
+      text-shadow: 0 0 6px rgba(255,255,255,0.3);
     }
-    footer a { color: #94a3b8; text-decoration: none; }
-  </style>
+  
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+  
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>  
 </head>
 <body>
 
   <!-- Banner Logo -->
   <div class="logo-banner">
+    <img src="Banner JOTA-JOTI 2025.png" alt="Logo Headline">
+  </div>
+
+  <!-- Judul -->
+  <h1>PANGKALAN TERBAIK</h1>
+
+  <!-- Grid Leaderboard -->
+  <div class="grid" id="leaderboard-grid"></div>
+
+  <!-- Logo Headline (Tidak Bergerak) -->
+  <div class="logo-banner bottom">
     <img src="LOGO HEADLINE.png" alt="Logo Headline">
   </div>
 
-  <h1>PANGKALAN TERBAIK</h1>
-
-  <div class="grid" id="leaderboard-grid"></div>
-
+  <!-- Footer -->
   <footer>
-    © 2025 Pramuka Badang Perkasa Present 
+    © 2025 Pramuka Badang Perkasa Present <br>
+    Supported by 
+    <a href="https://instagram.com/kodeka2025" target="_blank" style="color:#FFD700; text-decoration:none; font-weight:600;">
+      Kodeka
+    </a>
   </footer>
 
-  <!-- JSON data embed -->
+  <!-- Data JSON -->
   <script id="leaderboard-data" type="application/json">
   [
-    {"id":"1","name":"SMP At Taubah","score":0},
-    {"id":"2","name":"SMP Swasta Harapan Bangsa","score":0},
-    {"id":"3","name":"SMP Negeri 27","score":0},
-    {"id":"4","name":"SMP Negeri 44","score":0},
-    {"id":"5","name":"SMP Negeri 36","score":0},
-    {"id":"6","name":"SMP Negeri 65","score":0},
-    {"id":"7","name":"SMP Negeri Al Barkah","score":0},
-    {"id":"8","name":"SMP Negeri 61","score":0},
-    {"id":"9","name":"SMP Negeri 37","score":0},
+    {"id": "1", "name": "SMP At Taubah", "score": 0},
+    {"id": "2", "name": "SMP Swasta Harapan Bangsa", "score": 0},
+    {"id": "3", "name": "SMP Negeri 27", "score": 0},
+    {"id": "4", "name": "SMP Negeri 44", "score": 0},
+    {"id": "5", "name": "SMP Negeri 36", "score": 0},
+    {"id": "6", "name": "SMP Negeri 65", "score": 0},
+    {"id": "7", "name": "SMP Negeri Al Barkah", "score": 0},
+    {"id": "8", "name": "SMP Negeri 61", "score": 0},
+    {"id": "9", "name": "SMP Negeri 37", "score": 0}
   ]
   </script>
 
   <script>
     function loadLeaderboard(){
       const raw = document.getElementById("leaderboard-data").textContent;
-      let data = JSON.parse(raw);
-
-      // urutkan berdasarkan skor tertinggi
-      data.sort((a,b) => b.score - a.score);
-
+      const data = JSON.parse(raw).sort((a,b)=>b.score - a.score);
       const grid = document.getElementById("leaderboard-grid");
       grid.innerHTML = "";
       data.forEach((s,i)=>{
-        // Tampilkan 🥇🥈🥉 untuk top 3
         let rankDisplay = i+1;
         if(i === 0) rankDisplay = "🥇";
         else if(i === 1) rankDisplay = "🥈";
@@ -158,5 +204,3 @@
   </script>
 </body>
 </html>
-
-
